@@ -1,0 +1,74 @@
+[
+  {
+    "published_file": "source.json",
+    "source_artifact": "source.json",
+    "source_sha256": "6538c7e4080ab1067a88e527027f76b93e5b62f9c74ef6fa994874ed3268471c",
+    "published_sha256": "6538c7e4080ab1067a88e527027f76b93e5b62f9c74ef6fa994874ed3268471c"
+  },
+  {
+    "published_file": "inspection.json",
+    "source_artifact": "inspection.json",
+    "source_sha256": "4dc919c8f872a9b0e7bee0b4c39eeeb56c2e9962e011c16c58b31e36ee776cbf",
+    "published_sha256": "4dc919c8f872a9b0e7bee0b4c39eeeb56c2e9962e011c16c58b31e36ee776cbf"
+  },
+  {
+    "published_file": "test-report.json",
+    "source_artifact": "test-report.json",
+    "source_sha256": "330b264e531dd3d73d2232041250b6e6183a91002f5c3c3270769dfd09d830eb",
+    "published_sha256": "42637c98227b96dfcc3ea0331a1594435f44e0679085c1e1cf579e09c120b97c"
+  },
+  {
+    "published_file": "main-thread-summary.json",
+    "source_artifact": "main-thread-summary.json",
+    "source_sha256": "56151d050e9563f704465a40025854bf3584b69c0ad7c05bfa241da3f641fab5",
+    "published_sha256": "56151d050e9563f704465a40025854bf3584b69c0ad7c05bfa241da3f641fab5"
+  },
+  {
+    "published_file": "archived-driver.py",
+    "source_artifact": "test_maintainer_app.py",
+    "source_sha256": "9a6becf1c088e4c70d7c2f901c3de6c2d9d2837f62d4266f6a84a35007b160a5",
+    "published_sha256": "aac3d08b91d37674c5e100807dafd789e9a0317f9c42964fa23eae5184658828"
+  },
+  {
+    "published_file": "coordinator.log",
+    "source_artifact": "run/coordinator.log",
+    "source_sha256": "edd7d25de5b17cd61d3a0d2cfdd48836f5b6d2c15d303633243c94bb905fa5aa",
+    "published_sha256": "edd7d25de5b17cd61d3a0d2cfdd48836f5b6d2c15d303633243c94bb905fa5aa"
+  },
+  {
+    "published_file": "windows-before.json",
+    "source_artifact": "run/windows-before.json",
+    "source_sha256": "5c054059a378285b45a9ea0336675d636d082330f49128001a7a446c999c8c60",
+    "published_sha256": "5c054059a378285b45a9ea0336675d636d082330f49128001a7a446c999c8c60"
+  },
+  {
+    "published_file": "windows-after.json",
+    "source_artifact": "run/windows-after.json",
+    "source_sha256": "d5ce4c59a97fedaafbbcb696fecfff6ca1c1fc8b385ee37890e01e7e2464c5a4",
+    "published_sha256": "d5ce4c59a97fedaafbbcb696fecfff6ca1c1fc8b385ee37890e01e7e2464c5a4"
+  },
+  {
+    "published_file": "after-full-process.sample.txt",
+    "source_artifact": "run/after.sample.txt",
+    "source_sha256": "e2e95ce7c78628135e24a45557b0c2248281220feaece150f36836d1bb4e0bb4",
+    "published_sha256": "e2e95ce7c78628135e24a45557b0c2248281220feaece150f36836d1bb4e0bb4"
+  },
+  {
+    "published_file": "before-full-process.sample.txt",
+    "source_artifact": "run/before.sample.txt",
+    "source_sha256": "2b62de3302afd3cd6b19d6e07f8b8db79a656dc7d37b8a32b2d8f4356a60fab7",
+    "published_sha256": "2b62de3302afd3cd6b19d6e07f8b8db79a656dc7d37b8a32b2d8f4356a60fab7"
+  },
+  {
+    "published_file": "existing-after.md",
+    "source_artifact": "run/existing.md",
+    "source_sha256": "a7606a92766bb90d47f337196f9303f6aed8f41811da0f7db8dcd7323ae87203",
+    "published_sha256": "a7606a92766bb90d47f337196f9303f6aed8f41811da0f7db8dcd7323ae87203"
+  },
+  {
+    "published_file": "next.md",
+    "source_artifact": "run/next.md",
+    "source_sha256": "5ff889c6f0011940902c11e27e1bd521c4ea82f0163bd5c1084edce8795d5cfb",
+    "published_sha256": "5ff889c6f0011940902c11e27e1bd521c4ea82f0163bd5c1084edce8795d5cfb"
+  }
+]

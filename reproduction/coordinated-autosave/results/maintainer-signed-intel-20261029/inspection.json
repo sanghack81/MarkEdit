@@ -1,0 +1,29 @@
+{
+  "zip_sha256": "ac00139201396742d29a1e3f0a94697eb810104ef9a2ca8740d53737f394483d",
+  "dmg_sha256": "0669fd22c71f3f8a5812b1a739fb79a801a50df199872887dd7639099bdea15e",
+  "volume": "/Volumes/MarkEdit",
+  "app": "/Volumes/MarkEdit/MarkEdit.app",
+  "metadata": {
+    "CFBundleIdentifier": "app.cyan.markedit",
+    "CFBundleShortVersionString": "1.36.0",
+    "CFBundleVersion": "96",
+    "LSMinimumSystemVersion": "15.0",
+    "CFBundleExecutable": "MarkEdit"
+  },
+  "codesign-verify": {
+    "exit": 0,
+    "output": "--prepared:/Volumes/MarkEdit/MarkEdit.app/Contents/PlugIns/QuickLookExtension.appex\n--validated:/Volumes/MarkEdit/MarkEdit.app/Contents/PlugIns/QuickLookExtension.appex\n--prepared:/Volumes/MarkEdit/MarkEdit.app/Contents/XPCServices/UpdateInstaller.xpc\n--validated:/Volumes/MarkEdit/MarkEdit.app/Contents/XPCServices/UpdateInstaller.xpc\n/Volumes/MarkEdit/MarkEdit.app: valid on disk\n/Volumes/MarkEdit/MarkEdit.app: satisfies its Designated Requirement\n"
+  },
+  "codesign-details": {
+    "exit": 0,
+    "output": "Executable=/Volumes/MarkEdit/MarkEdit.app/Contents/MacOS/MarkEdit\nIdentifier=app.cyan.markedit\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20500 size=21597 flags=0x10000(runtime) hashes=664+7 location=embedded\nVersionPlatform=1\nVersionMin=983040\nVersionSDK=1705216\nHash type=sha256 size=32\nCandidateCDHash sha256=02edd9aa3612ff433df09a93ce318c31fffa85a4\nCandidateCDHashFull sha256=02edd9aa3612ff433df09a93ce318c31fffa85a4c657e1307f16515b72caca31\nHash choices=sha256\nCMSDigest=02edd9aa3612ff433df09a93ce318c31fffa85a4c657e1307f16515b72caca31\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=2220032\nExecutable Segment flags=0x1\nPage size=4096\nCDHash=02edd9aa3612ff433df09a93ce318c31fffa85a4\nSignature size=8971\nAuthority=Developer ID Application: YING ZHONG (TCKG8FBVG6)\nAuthority=Developer ID Certification Authority\nAuthority=Apple Root CA\nTimestamp=Oct 29, 2026 at 1:10:27\u202fPM\nInfo.plist entries=31\nTeamIdentifier=TCKG8FBVG6\nRuntime Version=26.5.0\nSealed Resources version=2 rules=13 files=26\nInternal requirements count=1 size=212\n"
+  },
+  "entitlements": {
+    "exit": 0,
+    "output": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"https://www.apple.com/DTDs/PropertyList-1.0.dtd\"><plist version=\"1.0\"><dict><key>com.apple.application-identifier</key><string>TCKG8FBVG6.app.cyan.markedit</string><key>com.apple.developer.team-identifier</key><string>TCKG8FBVG6</string><key>com.apple.security.app-sandbox</key><true/><key>com.apple.security.application-groups</key><array><string>group.app.cyan.markedit</string></array><key>com.apple.security.files.user-selected.executable</key><true/><key>com.apple.security.files.user-selected.read-write</key><true/><key>com.apple.security.network.client</key><true/><key>com.apple.security.print</key><true/><key>com.apple.security.temporary-exception.files.home-relative-path.read-write</key><array><string>/</string></array></dict></plist>\nExecutable=/Volumes/MarkEdit/MarkEdit.app/Contents/MacOS/MarkEdit\nwarning: Specifying ':' in the path is deprecated and will not work in a future release\n"
+  },
+  "gatekeeper": {
+    "exit": 0,
+    "output": "/Volumes/MarkEdit/MarkEdit.app: accepted\nsource=Notarized Developer ID\norigin=Developer ID Application: YING ZHONG (TCKG8FBVG6)\n"
+  }
+}

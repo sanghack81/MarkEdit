@@ -1,0 +1,6 @@
+{
+  "total_main_samples": 4235,
+  "serialization_wait_samples": 0,
+  "observation_seconds": 5,
+  "main_thread_header": "    4235 Thread_24810525: Main Thread   DispatchQueue_<multiple>"
+}

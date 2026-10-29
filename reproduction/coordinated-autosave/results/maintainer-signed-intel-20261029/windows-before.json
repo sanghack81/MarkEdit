@@ -1,0 +1,122 @@
+[
+  {
+    "kCGWindowAlpha" : 0.94519853591918945,
+    "kCGWindowBounds" : {
+      "Height" : 1067,
+      "Width" : 1936,
+      "X" : 56,
+      "Y" : 55
+    },
+    "kCGWindowIsOnscreen" : true,
+    "kCGWindowLayer" : 0,
+    "kCGWindowMemoryUsage" : 2288,
+    "kCGWindowName" : "existing.md",
+    "kCGWindowNumber" : 13832,
+    "kCGWindowOwnerName" : "MarkEdit",
+    "kCGWindowOwnerPID" : 3952,
+    "kCGWindowSharingState" : 1,
+    "kCGWindowStoreType" : 1
+  },
+  {
+    "kCGWindowAlpha" : 1,
+    "kCGWindowBounds" : {
+      "Height" : 500,
+      "Width" : 500,
+      "X" : 0,
+      "Y" : 652
+    },
+    "kCGWindowLayer" : 0,
+    "kCGWindowMemoryUsage" : 2288,
+    "kCGWindowName" : "",
+    "kCGWindowNumber" : 13830,
+    "kCGWindowOwnerName" : "MarkEdit",
+    "kCGWindowOwnerPID" : 3952,
+    "kCGWindowSharingState" : 1,
+    "kCGWindowStoreType" : 1
+  },
+  {
+    "kCGWindowAlpha" : 1,
+    "kCGWindowBounds" : {
+      "Height" : 24,
+      "Width" : 2048,
+      "X" : 0,
+      "Y" : 0
+    },
+    "kCGWindowLayer" : 0,
+    "kCGWindowMemoryUsage" : 2288,
+    "kCGWindowName" : "",
+    "kCGWindowNumber" : 13828,
+    "kCGWindowOwnerName" : "MarkEdit",
+    "kCGWindowOwnerPID" : 3952,
+    "kCGWindowSharingState" : 1,
+    "kCGWindowStoreType" : 1
+  },
+  {
+    "kCGWindowAlpha" : 1,
+    "kCGWindowBounds" : {
+      "Height" : 24,
+      "Width" : 2048,
+      "X" : 0,
+      "Y" : 0
+    },
+    "kCGWindowLayer" : 0,
+    "kCGWindowMemoryUsage" : 2288,
+    "kCGWindowName" : "",
+    "kCGWindowNumber" : 13827,
+    "kCGWindowOwnerName" : "MarkEdit",
+    "kCGWindowOwnerPID" : 3952,
+    "kCGWindowSharingState" : 1,
+    "kCGWindowStoreType" : 1
+  },
+  {
+    "kCGWindowAlpha" : 1,
+    "kCGWindowBounds" : {
+      "Height" : 24,
+      "Width" : 2048,
+      "X" : 0,
+      "Y" : 0
+    },
+    "kCGWindowLayer" : 0,
+    "kCGWindowMemoryUsage" : 2288,
+    "kCGWindowName" : "",
+    "kCGWindowNumber" : 13826,
+    "kCGWindowOwnerName" : "MarkEdit",
+    "kCGWindowOwnerPID" : 3952,
+    "kCGWindowSharingState" : 1,
+    "kCGWindowStoreType" : 1
+  },
+  {
+    "kCGWindowAlpha" : 1,
+    "kCGWindowBounds" : {
+      "Height" : 24,
+      "Width" : 2048,
+      "X" : 0,
+      "Y" : 0
+    },
+    "kCGWindowLayer" : 0,
+    "kCGWindowMemoryUsage" : 2288,
+    "kCGWindowName" : "",
+    "kCGWindowNumber" : 13825,
+    "kCGWindowOwnerName" : "MarkEdit",
+    "kCGWindowOwnerPID" : 3952,
+    "kCGWindowSharingState" : 1,
+    "kCGWindowStoreType" : 1
+  },
+  {
+    "kCGWindowAlpha" : 1,
+    "kCGWindowBounds" : {
+      "Height" : 0,
+      "Width" : 0,
+      "X" : 0,
+      "Y" : 1152
+    },
+    "kCGWindowLayer" : 0,
+    "kCGWindowMemoryUsage" : 2288,
+    "kCGWindowName" : "",
+    "kCGWindowNumber" : 13831,
+    "kCGWindowOwnerName" : "MarkEdit",
+    "kCGWindowOwnerPID" : 3952,
+    "kCGWindowSharingState" : 1,
+    "kCGWindowStoreType" : 1
+  }
+]

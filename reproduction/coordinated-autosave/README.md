@@ -2,6 +2,8 @@
 
 Evidence for [issue #1833](https://github.com/MarkEdit-app/MarkEdit/issues/1833) and [PR #1840](https://github.com/MarkEdit-app/MarkEdit/pull/1840).
 
+The [maintainer-supplied signed 1.36.0 build also passes on the original Intel iMac](results/maintainer-signed-intel-20261029/README.md): the writer completes before the next-open request, the next window appears, disk bytes match, and the five-second sample has zero serialization waits across 4,235 main-thread samples. This was one bounded check using normal settings; the installed original app was preserved.
+
 On October 28, 2026, the installed MarkEdit 1.36.0 hung again on the Intel iMac while opening a 7,848-byte Markdown file in Google Drive. A 30-second full-process sample shows the main thread blocked in `documentForURL:` → `_isLocatedByURL:` → `_NSDocumentSerializationSemaphore.wait` throughout all 24,599 main-thread samples. A background `willSaveCallback` thread waits in `NSUIActivityManager userActivityWillSave:`. [Full-process sample](results/natural-20261028-full-process.sample.txt) · [selected threads](results/natural-20261028-selected-threads.sample.txt).
 
 We then induced a file-coordination hang with ordinary local temporary files in the full source-built application on both Intel and M4 Pro. The callback-autosave comparison completed the external write and opened the next document under the same sequence.
@@ -45,7 +47,7 @@ Recorded comparison (one paired final run per architecture):
 | Machine | Original app | Callback app |
 | --- | --- | --- |
 | iMac19,1, Intel x86_64, macOS 15.8.1 (24H32), 5-second sample | 4,166/4,166 main-thread samples in document serialization wait; writer pending; no next window; no disk update | 0/4,100 in that wait; writer exit 0; next window present; expected disk bytes |
-| M4 Pro Mac mini, native arm64, macOS 27.0 (26A428), 10-second sample | 8,548/8,548 in that wait; writer pending; no next window; no disk update | 0/6,732 in that wait; writer exit 0 before the two-second next-open request; next window present; expected disk bytes and advancing UI heartbeat |
+| M4 Pro Mac mini, native arm64, macOS 27.0 (26A428), 10-second sample | 8,548/8,548 in that wait; writer pending; no next window; no disk update | 0/6,732 in that wait; writer exit 0 within the two-second wait, before the next-open request; next window present; expected disk bytes and advancing UI heartbeat |
 
 The final Intel original run entered the wait via `_checkAutosavingThenContinue:`. An [earlier original Intel run](results/gui/intel-earlier-lookup-main-thread.sample.txt) and the M4 original run entered it via `documentForURL:`, matching the natural incident's lookup path. Do not read every wait sample as an identical full stack.
 
@@ -54,6 +56,8 @@ The final Intel original run entered the wait via `_checkAutosavingThenContinue:
 ### Probe differences
 
 These were isolated debug builds, not pristine release binaries. Bundle/app-group identities and settings were separate; Quick Look plugins and URL-scheme/default-handler registrations were removed. On macOS 27 the sandbox denied the probe's shared-container startup copy, so that unrelated Quick Look initialization was explicitly skipped and the unused app-group entitlement omitted. The normal app sandbox remained enabled. Native window-title/heartbeat tracing was added on M4 because window titles were unavailable to the SSH process. Document getters ran once before coordination, not during the wait. Updates were disabled in each probe's settings. Both original and callback variants used equivalent isolation measures, with per-variant bundle/group IDs; their open/autosave behavior differed by the linked callback hunk.
+
+The recorded drivers wait up to two seconds for the writer before opening the next file, returning earlier on success; the manual commands above use a fixed two-second delay.
 
 The archived [source overlays](provenance/) and [Intel](gui/intel-driver.py)/[M4](gui/arm-driver.py) observation drivers show the experiment's changes. The drivers expect already-built isolated bundles; the M4 driver also expects the matching tracing overlay. This folder does not automate app signing/packaging or claim a pristine-release binary A/B.
 

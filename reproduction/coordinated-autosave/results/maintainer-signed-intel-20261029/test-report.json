@@ -1,0 +1,30 @@
+{
+  "binary_sha256": "e628eb9832fde880b1747d28b26db76158e435ba51d57cba1ed5aa1a81759e0d",
+  "binary_unmodified": true,
+  "shared_production_settings": true,
+  "app": "/tmp/REDACTED/markedit-maintainer-test.9g_2enyf/MarkEdit.app",
+  "bundle_id": "app.cyan.markedit",
+  "started_at": "2026-10-29T21:39:36.549128+09:00",
+  "launch_command": [
+    "/usr/bin/open",
+    "-n",
+    "-a",
+    "/tmp/REDACTED/markedit-maintainer-test.9g_2enyf/MarkEdit.app",
+    "/tmp/REDACTED/markedit-maintainer-run-se0mbx_f/existing.md",
+    "--args",
+    "-ApplePersistenceIgnoreState",
+    "YES"
+  ],
+  "pid": 3952,
+  "coordinator_pid": 3992,
+  "coordinator_exit_before_next_open": 0,
+  "next_window_present": true,
+  "coordinator_still_pending": false,
+  "coordinator_exit": 0,
+  "external_write_reached_disk": true,
+  "serialization_wait_in_sample": false,
+  "finished_at": "2026-10-29T21:39:52.782885+09:00",
+  "probe_stopped": true,
+  "installed_binary_unchanged": true,
+  "runtime_signature_exit": 0
+}
