@@ -1,0 +1,48 @@
+{
+  "app": "/private/tmp/markedit-probe-v136.DeEhvj/runtime-arm-original/MarkEditProbeARMOriginal.app",
+  "bundle_id": "app.cyan.markedit.probe.v136.arm",
+  "started_at": "2026-10-28T22:15:43.591282+09:00",
+  "launch_command": [
+    "/usr/bin/open",
+    "-n",
+    "-a",
+    "/private/tmp/markedit-probe-v136.DeEhvj/runtime-arm-original/MarkEditProbeARMOriginal.app",
+    "/tmp/REDACTED/markedit-built-app-test-oe1t3rll/existing.md",
+    "--args",
+    "-ApplePersistenceIgnoreState",
+    "YES",
+    "-markedit-probe-disable-quicklook-sharing",
+    "YES",
+    "-markedit-probe-documents-log",
+    "/Users/REDACTED/Library/Containers/app.cyan.markedit.probe.v136.arm/Data/Documents/probe-documents.json"
+  ],
+  "pid": 26900,
+  "baseline_native_documents": [
+    {
+      "file_url": "/tmp/REDACTED/markedit-built-app-test-oe1t3rll/existing.md",
+      "has_unautosaved_changes": false,
+      "is_content_ready": true,
+      "is_document_edited": false,
+      "is_outdated": false,
+      "string_value": "# Existing fixture\n\nOpened before coordinated writing.\n",
+      "window_titles": [
+        "existing.md"
+      ]
+    }
+  ],
+  "coordinator_pid": 26927,
+  "coordinator_exit_before_next_open": null,
+  "next_window_present": false,
+  "after_native_windows": {
+    "heartbeat": 1793193347.868844,
+    "window_titles": [
+      "existing.md"
+    ]
+  },
+  "coordinator_still_pending": true,
+  "coordinator_exit": null,
+  "external_write_reached_disk": false,
+  "serialization_wait_in_sample": true,
+  "finished_at": "2026-10-28T22:15:59.699619+09:00",
+  "probe_stopped": true
+}

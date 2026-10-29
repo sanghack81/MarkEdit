@@ -1,0 +1,54 @@
+diff --git a/MarkEditCore/Sources/Extensions/URL+Extension.swift b/MarkEditCore/Sources/Extensions/URL+Extension.swift
+index 3fc1d15..8f57197 100644
+--- a/MarkEditCore/Sources/Extensions/URL+Extension.swift
++++ b/MarkEditCore/Sources/Extensions/URL+Extension.swift
+@@ -21,7 +21,7 @@ public extension URL {
+   }
+ 
+   static var sharedContainerURL: URL? {
+-    FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.app.cyan.markedit")
++    FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.app.cyan.markedit.probe.v136")
+   }
+ 
+   /// Files in this directory whose extension is in `types`, sorted by localized filename order.
+diff --git a/MarkEditCore/Sources/Extensions/UserDefaults+Extension.swift b/MarkEditCore/Sources/Extensions/UserDefaults+Extension.swift
+index 4fd08d0..1c47709 100644
+--- a/MarkEditCore/Sources/Extensions/UserDefaults+Extension.swift
++++ b/MarkEditCore/Sources/Extensions/UserDefaults+Extension.swift
+@@ -36,7 +36,7 @@ public extension UserDefaults {
+ 
+ private extension UserDefaults {
+   static var appGroup: UserDefaults? {
+-    UserDefaults(suiteName: "group.app.cyan.markedit")
++    UserDefaults(suiteName: "group.app.cyan.markedit.probe.v136")
+   }
+ 
+   static let forcedColorSchemeKey = "forcedColorScheme"
+diff --git a/MarkEditMac/Info.entitlements b/MarkEditMac/Info.entitlements
+index d384349..88ef53c 100644
+--- a/MarkEditMac/Info.entitlements
++++ b/MarkEditMac/Info.entitlements
+@@ -16,5 +16,9 @@
+ 	<array>
+ 		<string>/</string>
+ 	</array>
++	<key>com.apple.security.application-groups</key>
++	<array>
++		<string>group.app.cyan.markedit.probe.v136</string>
++	</array>
+ </dict>
+ </plist>
+diff --git a/QuickLookMac/Info.entitlements b/QuickLookMac/Info.entitlements
+index 0470bb1..0131d95 100644
+--- a/QuickLookMac/Info.entitlements
++++ b/QuickLookMac/Info.entitlements
+@@ -12,5 +12,9 @@
+ 	<array>
+ 		<string>/</string>
+ 	</array>
++	<key>com.apple.security.application-groups</key>
++	<array>
++		<string>group.app.cyan.markedit.probe.v136</string>
++	</array>
+ </dict>
+ </plist>

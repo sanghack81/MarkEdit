@@ -1,0 +1,200 @@
+[
+  {
+    "published_file": "exact-method/upstream-EditorDocument.swift",
+    "original_sha256": "624cf9ab46e238b1c89512e0bdcd64a7ce256fed66ae147adf566d511092cea5",
+    "published_sha256": "624cf9ab46e238b1c89512e0bdcd64a7ce256fed66ae147adf566d511092cea5",
+    "source_artifact": "source-analysis/exact-method/upstream-EditorDocument.swift"
+  },
+  {
+    "published_file": "gui/coordinate.swift",
+    "original_sha256": "e598a149158587b64fffba020f0e64bc8413054bef02effa47e2e253eaff92de",
+    "published_sha256": "e598a149158587b64fffba020f0e64bc8413054bef02effa47e2e253eaff92de",
+    "source_artifact": "source-analysis/actual-app/coordinate.swift"
+  },
+  {
+    "published_file": "gui/intel-driver.py",
+    "original_sha256": "087ee67f97487671b6c6e5f4bae051a037683cded546ae8ee7f18d9634eb963b",
+    "published_sha256": "087ee67f97487671b6c6e5f4bae051a037683cded546ae8ee7f18d9634eb963b",
+    "source_artifact": "source-analysis/actual-app/test_app.py"
+  },
+  {
+    "published_file": "gui/windows.swift",
+    "original_sha256": "6ea7b71669fcb3fcbdb251d317ecaea8a21e18f7584a7ed471af6349ce5c1b99",
+    "published_sha256": "6ea7b71669fcb3fcbdb251d317ecaea8a21e18f7584a7ed471af6349ce5c1b99",
+    "source_artifact": "source-analysis/actual-app/windows.swift"
+  },
+  {
+    "published_file": "gui/arm-driver.py",
+    "original_sha256": "7bb6f9ca503176a75ffbdb56ee165b8bfbba3a8aad4f7eac63f6388af313da1f",
+    "published_sha256": "7bb6f9ca503176a75ffbdb56ee165b8bfbba3a8aad4f7eac63f6388af313da1f",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/test_app.py"
+  },
+  {
+    "published_file": "results/gui/intel-comparison.json",
+    "original_sha256": "ec1229f22f4a18d95172c3ceacbef249c7429472683fe4ba97488a4e65d47501",
+    "published_sha256": "ec1229f22f4a18d95172c3ceacbef249c7429472683fe4ba97488a4e65d47501",
+    "source_artifact": "source-analysis/actual-app/intel-comparison.json"
+  },
+  {
+    "published_file": "results/gui/arm-comparison.json",
+    "original_sha256": "82f80554ed0dd7454b8537828b0ac25a13c5a4a59594cf88340e9d7cc098622b",
+    "published_sha256": "4245eb9318ccbc6ef1dc9ec6b307bf754bfa875b22789a8c9bcb28733e8e636d",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/comparison.json"
+  },
+  {
+    "published_file": "results/gui/intel-original-report.json",
+    "original_sha256": "8f9225631e4f0d2d36a4021446147c6f54bb94eac7d3d55e717c992955270044",
+    "published_sha256": "eeac44df3ab027587c29d4771abb405a043cbba85fee1702edc750d676550242",
+    "source_artifact": "source-analysis/actual-app/runs/intel-original/report.json"
+  },
+  {
+    "published_file": "results/gui/intel-original-coordinator.log",
+    "original_sha256": "ad376981743a132cb73ff5bdb72b9fc58763bcffe0ec4e8ed578d5fa89a9e513",
+    "published_sha256": "ad376981743a132cb73ff5bdb72b9fc58763bcffe0ec4e8ed578d5fa89a9e513",
+    "source_artifact": "source-analysis/actual-app/runs/intel-original/coordinator.log"
+  },
+  {
+    "published_file": "results/gui/intel-original-main-thread.sample.txt",
+    "original_sha256": "d05361041328f069d8e25bf6ab5ac2df7ada42b9c48582dd40baf88d4e24eb01",
+    "published_sha256": "a595f54d9f22e6fe792a760d3bf6fed63824d3f140fd7ab589cbed08a0353bfe",
+    "source_artifact": "source-analysis/actual-app/runs/intel-original/after.sample.txt"
+  },
+  {
+    "published_file": "results/gui/intel-callback-report.json",
+    "original_sha256": "ed17951f00c4af592493f9bdc31f4fbc709bceba2c06ed4fb5381d61f4225159",
+    "published_sha256": "c3187bfd07017b791edcf3362c7eb8457ca310183963804dce7e2c559bebd785",
+    "source_artifact": "source-analysis/actual-app/runs/intel-callback/report.json"
+  },
+  {
+    "published_file": "results/gui/intel-callback-coordinator.log",
+    "original_sha256": "00416188c5329d50fa9e8234ca45d81c7dda69f20899440f84fe1d9f87b7ff5c",
+    "published_sha256": "00416188c5329d50fa9e8234ca45d81c7dda69f20899440f84fe1d9f87b7ff5c",
+    "source_artifact": "source-analysis/actual-app/runs/intel-callback/coordinator.log"
+  },
+  {
+    "published_file": "results/gui/intel-callback-main-thread.sample.txt",
+    "original_sha256": "c4a817bc44a1293008f839b1459980a1b187101f4d6d2f55db61e9d4316f2fe3",
+    "published_sha256": "709e595b6e3d1ef8a3f348e3b11c3214d566f8acfdf6d7aaf8d72e658ac993b9",
+    "source_artifact": "source-analysis/actual-app/runs/intel-callback/after.sample.txt"
+  },
+  {
+    "published_file": "results/gui/arm-original-report.json",
+    "original_sha256": "4b5a2abcc7f38ebbd7851a9b3e269f6f2bf432ae6ef97a65b90bc865c978a4f9",
+    "published_sha256": "8a442df245516e447747f1b387771fc003ddb6588d97a4c45b8ea4d97536770d",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/results/original/report.json"
+  },
+  {
+    "published_file": "results/gui/arm-original-coordinator.log",
+    "original_sha256": "a4cc2110749daf0803cbab2035f94f6ce721fc57e6d8f12b9ac83eaf9d2f814d",
+    "published_sha256": "a4cc2110749daf0803cbab2035f94f6ce721fc57e6d8f12b9ac83eaf9d2f814d",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/results/original/coordinator.log"
+  },
+  {
+    "published_file": "results/gui/arm-original-main-thread.sample.txt",
+    "original_sha256": "dc667be43d453fa23ecb27746d3559ff4bda9abbdefa39995380fe95d4510e70",
+    "published_sha256": "07477c25b3012b6dd126954207046d7183903655709e961941ddfdd66e4062e7",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/results/original/after.sample.txt"
+  },
+  {
+    "published_file": "results/gui/arm-callback-report.json",
+    "original_sha256": "04dd97c872354586f58bedcd11f64b8d8b9964de22ef57e44cc5a958a363d0b9",
+    "published_sha256": "0893c812b4a44a549ed62b9aa79ba1c3e338ce4e6c5f7e0659baf30bc4b4ee21",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/results/callback/report.json"
+  },
+  {
+    "published_file": "results/gui/arm-callback-coordinator.log",
+    "original_sha256": "073f0f124cd9750eefa4faa735deeadcb2519586f38bf20a23b82376552527d5",
+    "published_sha256": "073f0f124cd9750eefa4faa735deeadcb2519586f38bf20a23b82376552527d5",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/results/callback/coordinator.log"
+  },
+  {
+    "published_file": "results/gui/arm-callback-main-thread.sample.txt",
+    "original_sha256": "3bdfb093a930c72117050c239ab48d173be4b8c19bbddb214497f0904c78474f",
+    "published_sha256": "eb2f40fd67240e62cc716b9c24b3ee033ba7ac7b9e02a4b20796ccd7884a2e65",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/results/callback/after.sample.txt"
+  },
+  {
+    "published_file": "results/gui/intel-earlier-lookup-main-thread.sample.txt",
+    "original_sha256": "81beecdbbfacc8ef52eac9a2aa3f9b789a451060bfd8b64f8bc24e8dba364203",
+    "published_sha256": "c4a51f7e3f056031c7552d2a9b5f78c015dff970649e1a966bba28f81be2d5cd",
+    "source_artifact": "source-analysis/actual-app/after-open.sample.txt"
+  },
+  {
+    "published_file": "results/natural-20261028-selected-threads.sample.txt",
+    "original_sha256": "fbb4b01582eb71769ee5e3511752e87b2953f726af98d2c718d464da27aaa4cc",
+    "source_artifact": "MarkEdit-full-process-30s.sample.txt",
+    "selection": "Header and complete main / userActivityWillSave threads only; paths redacted",
+    "published_sha256": "5de857d75f2fff81758a87ebf4cde031c2b0a8f25c02a1f0f96c5cd74ce0b33a"
+  },
+  {
+    "published_file": "provenance/intel-original-isolation.patch",
+    "original_sha256": "dd93c86532ecb7ab5e30f015b5772c1ef4a803eb1d4762e915b03469af2658c5",
+    "published_sha256": "dd93c86532ecb7ab5e30f015b5772c1ef4a803eb1d4762e915b03469af2658c5",
+    "source_artifact": "source-analysis/actual-app/build-provenance/runtime-isolation.patch"
+  },
+  {
+    "published_file": "provenance/intel-callback-overlay.patch",
+    "original_sha256": "6439b1aca7257b89f986c08512c366a29c33fed8362a67921470cc5891ba9ad0",
+    "published_sha256": "6439b1aca7257b89f986c08512c366a29c33fed8362a67921470cc5891ba9ad0",
+    "source_artifact": "source-analysis/actual-app/build-provenance/callback-source-overlay.patch"
+  },
+  {
+    "published_file": "provenance/arm-original-overlay.patch",
+    "original_sha256": "9e81921e53d9975a4b55ae2a0ba442d8797110329fdf35c2aa6817452d4b53e4",
+    "published_sha256": "9e81921e53d9975a4b55ae2a0ba442d8797110329fdf35c2aa6817452d4b53e4",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/arm-original-source-overlay.patch"
+  },
+  {
+    "published_file": "provenance/arm-callback-overlay.patch",
+    "original_sha256": "fcf974be3e7802eed44be0cd5f996e017d3b0b090fbf090a3693d3774e340da4",
+    "published_sha256": "fcf974be3e7802eed44be0cd5f996e017d3b0b090fbf090a3693d3774e340da4",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/arm-callback-source-overlay.patch"
+  },
+  {
+    "published_file": "results/exact-method/intel-report.json",
+    "original_sha256": "8e0452b44c37d3287b2b26c15f43695157a126b6bd88f0e754994c8cd559ea15",
+    "published_sha256": "f206de1cafb9a25d9a1bf192278f8060ecd65f9dfb2f42791c54dec4e5dcef6a",
+    "source_artifact": "source-analysis/exact-method/runs/markedit-exact-method-w3sumj_m/report.json"
+  },
+  {
+    "published_file": "results/exact-method/arm-report.json",
+    "original_sha256": "883f7a08b7acc4a42ad29957447999913dc551c079d9a8cdd8ca54fd4e7bd7ac",
+    "published_sha256": "fcf025bb9c65b50b600a58b87807b189305596a062d170c60aefd595e477041e",
+    "source_artifact": "source-analysis/exact-method/m4-results/markedit-exact-m4-e41h0kkz/runs/markedit-exact-method-3_sp2zah/report.json"
+  },
+  {
+    "published_file": "results/gui/intel-original-full-process.sample.txt",
+    "original_sha256": "d05361041328f069d8e25bf6ab5ac2df7ada42b9c48582dd40baf88d4e24eb01",
+    "source_artifact": "source-analysis/actual-app/runs/intel-original/after.sample.txt",
+    "selection": "Full process; paths redacted",
+    "published_sha256": "d05361041328f069d8e25bf6ab5ac2df7ada42b9c48582dd40baf88d4e24eb01"
+  },
+  {
+    "published_file": "results/gui/arm-original-full-process.sample.txt",
+    "original_sha256": "dc667be43d453fa23ecb27746d3559ff4bda9abbdefa39995380fe95d4510e70",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/results/original/after.sample.txt",
+    "selection": "Full process; paths redacted",
+    "published_sha256": "dc667be43d453fa23ecb27746d3559ff4bda9abbdefa39995380fe95d4510e70"
+  },
+  {
+    "published_file": "results/gui/intel-callback-full-process.sample.txt",
+    "original_sha256": "c4a817bc44a1293008f839b1459980a1b187101f4d6d2f55db61e9d4316f2fe3",
+    "source_artifact": "source-analysis/actual-app/runs/intel-callback/after.sample.txt",
+    "selection": "Full process; paths redacted",
+    "published_sha256": "c4a817bc44a1293008f839b1459980a1b187101f4d6d2f55db61e9d4316f2fe3"
+  },
+  {
+    "published_file": "results/gui/arm-callback-full-process.sample.txt",
+    "original_sha256": "3bdfb093a930c72117050c239ab48d173be4b8c19bbddb214497f0904c78474f",
+    "source_artifact": "source-analysis/actual-app/macmini-arm-20261028/actual-app-arm/results/callback/after.sample.txt",
+    "selection": "Full process; paths redacted",
+    "published_sha256": "3bdfb093a930c72117050c239ab48d173be4b8c19bbddb214497f0904c78474f"
+  },
+  {
+    "published_file": "results/natural-20261028-full-process.sample.txt",
+    "original_sha256": "fbb4b01582eb71769ee5e3511752e87b2953f726af98d2c718d464da27aaa4cc",
+    "source_artifact": "MarkEdit-full-process-30s.sample.txt",
+    "selection": "Full process; paths redacted",
+    "published_sha256": "fbb4b01582eb71769ee5e3511752e87b2953f726af98d2c718d464da27aaa4cc"
+  }
+]

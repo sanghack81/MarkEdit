@@ -1,0 +1,21 @@
+ORIGINAL METHOD + ADDED TEST
+Source log SHA-256: 747541981d458ded6c6974a69e5513824f911f0d492dbd5e68b8e7afea560ab4
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -project MarkEdit.xcodeproj -scheme MarkEditMac "-only-testing:MarkEditMacTests/EditorDocumentTests/testAutosaveCompletesDuringCoordinatedFileAccess" -destination platform=macOS -derivedDataPath /private/tmp/markedit-pr-callback.7R9AGD/DerivedData -resultBundlePath /private/tmp/markedit-pr-callback.7R9AGD/baseline-coordination-rerun.xcresult CODE_SIGN_IDENTITY= CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+Test Case '-[MarkEditMacTests.EditorDocumentTests testAutosaveCompletesDuringCoordinatedFileAccess]' started.
+/tmp/markedit-pr-callback.7R9AGD/source/MarkEditMac/Tests/EditorDocumentSaveTests.swift:143: error: -[MarkEditMacTests.EditorDocumentTests testAutosaveCompletesDuringCoordinatedFileAccess] : failed - Autosave did not finish inside coordinated file access
+Test Case '-[MarkEditMacTests.EditorDocumentTests testAutosaveCompletesDuringCoordinatedFileAccess]' failed (3.130 seconds).
+	 Executed 1 test, with 1 failure (0 unexpected) in 3.130 (3.131) seconds
+	 Executed 1 test, with 1 failure (0 unexpected) in 3.130 (3.131) seconds
+	 Executed 1 test, with 1 failure (0 unexpected) in 3.130 (3.132) seconds
+	EditorDocumentTests.testAutosaveCompletesDuringCoordinatedFileAccess()
+** TEST FAILED **
+
+CALLBACK METHOD + ADDED TEST
+Source log SHA-256: ab47d0a2802f7cd6e006d4bc0cd98b7064efbb676733b3fdd9827372ab92acc9
+Test Case '-[MarkEditMacTests.EditorDocumentTests testAutosaveCompletesDuringCoordinatedFileAccess]' started.
+Test Case '-[MarkEditMacTests.EditorDocumentTests testAutosaveCompletesDuringCoordinatedFileAccess]' passed (0.018 seconds).
+	 Executed 39 tests, with 1 test skipped and 0 failures (0 unexpected) in 11.308 (11.318) seconds
+	 Executed 39 tests, with 1 test skipped and 0 failures (0 unexpected) in 11.308 (11.319) seconds
+** TEST SUCCEEDED **
+
+/tmp/markedit-pr-callback.7R9AGD/source/MarkEditMac/Tests/EditorDocumentTests.swift:716: -[MarkEditMacTests.EditorDocumentTests testSecretStorageWithSystemKeychain] : Test skipped - System Keychain tests require a signed host with Keychain entitlements.

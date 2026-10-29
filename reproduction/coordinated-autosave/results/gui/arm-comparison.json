@@ -1,0 +1,144 @@
+{
+  "machine": {
+    "architecture": "arm64",
+    "macos": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A428",
+    "xcode": "Xcode 27.1\nBuild version 27A9275"
+  },
+  "source_commit": "d0b6ab653f1daf412a0816ff050f457d4c323c3c",
+  "fixture_location": "new per-user temporary directories outside Dropbox and Google Drive",
+  "diagnostic_differences": [
+    "QuickLook plugin removed; shared-container startup copy skipped with explicit probe-only launch flag after macOS27 denied group writes",
+    "Normal app sandbox retained; unused app-group entitlement omitted for ARM probes",
+    "Native UI title/heartbeat trace replaces unavailable CGWindowName; document getters execute once before coordination, never afterward",
+    "Probe-only settings general.updateBehavior=never; same settings bytes for both variants"
+  ],
+  "original": {
+    "report": {
+      "app": "/private/tmp/markedit-probe-v136.DeEhvj/runtime-arm-original/MarkEditProbeARMOriginal.app",
+      "bundle_id": "app.cyan.markedit.probe.v136.arm",
+      "started_at": "2026-10-28T22:15:43.591282+09:00",
+      "launch_command": [
+        "/usr/bin/open",
+        "-n",
+        "-a",
+        "/private/tmp/markedit-probe-v136.DeEhvj/runtime-arm-original/MarkEditProbeARMOriginal.app",
+        "/tmp/REDACTED/markedit-built-app-test-oe1t3rll/existing.md",
+        "--args",
+        "-ApplePersistenceIgnoreState",
+        "YES",
+        "-markedit-probe-disable-quicklook-sharing",
+        "YES",
+        "-markedit-probe-documents-log",
+        "/Users/REDACTED/Library/Containers/app.cyan.markedit.probe.v136.arm/Data/Documents/probe-documents.json"
+      ],
+      "pid": 26900,
+      "baseline_native_documents": [
+        {
+          "file_url": "/tmp/REDACTED/markedit-built-app-test-oe1t3rll/existing.md",
+          "has_unautosaved_changes": false,
+          "is_content_ready": true,
+          "is_document_edited": false,
+          "is_outdated": false,
+          "string_value": "# Existing fixture\n\nOpened before coordinated writing.\n",
+          "window_titles": [
+            "existing.md"
+          ]
+        }
+      ],
+      "coordinator_pid": 26927,
+      "coordinator_exit_before_next_open": null,
+      "next_window_present": false,
+      "after_native_windows": {
+        "heartbeat": 1793193347.868844,
+        "window_titles": [
+          "existing.md"
+        ]
+      },
+      "coordinator_still_pending": true,
+      "coordinator_exit": null,
+      "external_write_reached_disk": false,
+      "serialization_wait_in_sample": true,
+      "finished_at": "2026-10-28T22:15:59.699619+09:00",
+      "probe_stopped": true
+    },
+    "main_thread": {
+      "main_thread_samples": 8548,
+      "serialization_wait_samples": 8548,
+      "serialization_wait_fraction": 1.0,
+      "wait_stack_lines": [
+        "    +                           5280 -[_NSDocumentSerializationSemaphore wait]  (in AppKit) + 88  [0x1a2acdf88]",
+        "    +                           3268 -[_NSDocumentSerializationSemaphore wait]  (in AppKit) + 32  [0x1a2acdf50]"
+      ],
+      "lookup_stack_lines": [
+        "    +               8548 -[NSDocumentController documentForURL:]  (in AppKit) + 152  [0x1a2aa3120]",
+        "    +                 8548 -[NSDocumentController _documentForURL:]  (in AppKit) + 176  [0x1a2aa3228]",
+        "    +                   8548 -[NSDocument _isLocatedByURL:becauseOfAutosavedContentsFile:]  (in AppKit) + 156  [0x1a2acde10]"
+      ]
+    }
+  },
+  "callback": {
+    "report": {
+      "app": "/private/tmp/markedit-probe-v136.DeEhvj/runtime-arm-callback/MarkEditProbeARMCallback.app",
+      "bundle_id": "app.cyan.markedit.probe.v136.arm.callback",
+      "started_at": "2026-10-28T22:18:29.233078+09:00",
+      "launch_command": [
+        "/usr/bin/open",
+        "-n",
+        "-a",
+        "/private/tmp/markedit-probe-v136.DeEhvj/runtime-arm-callback/MarkEditProbeARMCallback.app",
+        "/tmp/REDACTED/markedit-built-app-test-a70_qill/existing.md",
+        "--args",
+        "-ApplePersistenceIgnoreState",
+        "YES",
+        "-markedit-probe-disable-quicklook-sharing",
+        "YES",
+        "-markedit-probe-documents-log",
+        "/Users/REDACTED/Library/Containers/app.cyan.markedit.probe.v136.arm.callback/Data/Documents/probe-documents.json"
+      ],
+      "pid": 28448,
+      "baseline_native_documents": [
+        {
+          "file_url": "/tmp/REDACTED/markedit-built-app-test-a70_qill/existing.md",
+          "has_unautosaved_changes": false,
+          "is_content_ready": true,
+          "is_document_edited": false,
+          "is_outdated": false,
+          "string_value": "# Existing fixture\n\nOpened before coordinated writing.\n",
+          "window_titles": [
+            "existing.md"
+          ]
+        }
+      ],
+      "coordinator_pid": 28507,
+      "coordinator_exit_before_next_open": 0,
+      "next_window_present": true,
+      "after_native_windows": {
+        "heartbeat": 1793193524.4689999,
+        "window_titles": [
+          "existing.md",
+          "next.md"
+        ]
+      },
+      "coordinator_still_pending": false,
+      "coordinator_exit": 0,
+      "external_write_reached_disk": true,
+      "serialization_wait_in_sample": false,
+      "finished_at": "2026-10-28T22:18:44.764190+09:00",
+      "probe_stopped": true
+    },
+    "main_thread": {
+      "main_thread_samples": 6732,
+      "serialization_wait_samples": 0,
+      "serialization_wait_fraction": 0.0,
+      "wait_stack_lines": [],
+      "lookup_stack_lines": []
+    }
+  },
+  "limits": [
+    "Clean existing-document comparison only; unchanged isOutdated slow path is not validated as fixed",
+    "Next document native window/title and heartbeat establish observed UI progress, not editor content readiness",
+    "One successful bounded comparison per ARM variant; 10-second samples do not prove eternal deadlock"
+  ],
+  "probe_processes_remaining": [],
+  "production_processes_unchanged": true
+}

@@ -1,0 +1,167 @@
+{
+  "manifest": {
+    "generated_at_utc": "2026-10-28T12:57:24.159156+00:00",
+    "original_path": "/private/tmp/markedit-hang-20261025.cJkq2a/MarkEdit-v1.36.0/MarkEditMac/Sources/Editor/Models/EditorDocument.swift",
+    "original_source_sha256": "624cf9ab46e238b1c89512e0bdcd64a7ce256fed66ae147adf566d511092cea5",
+    "original_method_lines": [
+      380,
+      396
+    ],
+    "extracted_method_sha256": "12f83fecd821dcbad0d6a4f5372df8e98d8ee5f7a37eab27893f7e43e721ad95",
+    "inserted_method_sha256": "12f83fecd821dcbad0d6a4f5372df8e98d8ee5f7a37eab27893f7e43e721ad95",
+    "byte_for_byte_equal": true,
+    "generated_sources_sha256": {
+      "inherited": "d490788b411c5c72a4c35fb7dc7da5621623b7da34652c95358c01de6f7f4d29",
+      "exact-original": "4dbf48d7eead7712f9aa4dda640ee614d280829a37a7ab4c41831a71f5b66945",
+      "callback-candidate": "b067012f24ba3fe80ca02b748daceb478f2b92c5c17bd89f65f8fcb97a4508a2"
+    },
+    "compiler": "Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)\nTarget: x86_64-apple-macosx15.0\n",
+    "platform": "macOS-15.8.1-x86_64-i386-64bit",
+    "os_version": "ProductName:\t\tmacOS\nProductVersion:\t\t15.8.1\nBuildVersion:\t\t24H32\n",
+    "result_path": "/tmp/REDACTED/markedit-exact-method-w3sumj_m",
+    "preserved_result_path": "/Users/REDACTED/Library/CloudStorage/Dropbox/Downloads/family_chores/markedit_hang_check/results/20261028-211055-x86_64-actual-hang-f8c3dd/source-analysis/exact-method/runs/markedit-exact-method-w3sumj_m",
+    "runner_sha256": "3027dd73d714d0e5c1f2323614ad095b60f37711952fd074553f522960cbb916",
+    "tested_branches": [
+      "isOutdated=false",
+      "hasBeenReverted=false",
+      "isTerminating=false",
+      "super.autosave",
+      "clean and cached-modified NSDocument"
+    ],
+    "untested_branches": [
+      "isOutdated=true and actual updateContent/WebKit",
+      "termination writeSafely branch",
+      "recent revert",
+      "formatting",
+      "untitled document heading",
+      "full MarkEdit app"
+    ],
+    "adapted_dependencies": [
+      "synchronous UTF-8 read",
+      "UTF-8 data serialization",
+      "isOutdated=true updateContent stub that traps if called"
+    ]
+  },
+  "cases": [
+    {
+      "name": "inherited-clean-write",
+      "variant": "inherited",
+      "state": "clean",
+      "operation": "write",
+      "lookup": false,
+      "child_pid": 87633,
+      "timed_out": false,
+      "exit_code": 0,
+      "completed": true,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=false hasUnautosavedChanges=false\nCOORDINATOR_START\nCOORDINATED_PREWRITE_BASE64 b24tZGlzay1pbml0aWFsCg==\nCOORDINATED_WRITE\nCOORDINATOR_FINISHED nil\nFINAL updateContentCalls=0 dataCalls=0 writeSafelyCalls=0\n"
+    },
+    {
+      "name": "inherited-modified-write",
+      "variant": "inherited",
+      "state": "modified",
+      "operation": "write",
+      "lookup": false,
+      "child_pid": 87634,
+      "timed_out": false,
+      "exit_code": 0,
+      "completed": true,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=true hasUnautosavedChanges=true\nCOORDINATOR_START\nWRITE_SAFELY 1\nDATA_REQUESTED 1 Y2FjaGVkLWxhdGVzdAo=\nCOORDINATED_PREWRITE_BASE64 Y2FjaGVkLWxhdGVzdAo=\nCOORDINATED_WRITE\nCOORDINATOR_FINISHED nil\nFINAL updateContentCalls=0 dataCalls=1 writeSafelyCalls=1\n"
+    },
+    {
+      "name": "exact-original-clean-write",
+      "variant": "exact-original",
+      "state": "clean",
+      "operation": "write",
+      "lookup": false,
+      "child_pid": 87637,
+      "timed_out": true,
+      "exit_code": null,
+      "completed": false,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=false hasUnautosavedChanges=false\nCOORDINATOR_START\n"
+    },
+    {
+      "name": "exact-original-modified-write",
+      "variant": "exact-original",
+      "state": "modified",
+      "operation": "write",
+      "lookup": false,
+      "child_pid": 87659,
+      "timed_out": true,
+      "exit_code": null,
+      "completed": false,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=true hasUnautosavedChanges=true\nCOORDINATOR_START\n"
+    },
+    {
+      "name": "callback-candidate-clean-write",
+      "variant": "callback-candidate",
+      "state": "clean",
+      "operation": "write",
+      "lookup": false,
+      "child_pid": 87681,
+      "timed_out": false,
+      "exit_code": 0,
+      "completed": true,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=false hasUnautosavedChanges=false\nCOORDINATOR_START\nCALLBACK_ENTER\nCOORDINATED_PREWRITE_BASE64 b24tZGlzay1pbml0aWFsCg==\nCOORDINATED_WRITE\nCOORDINATOR_FINISHED nil\nFINAL updateContentCalls=0 dataCalls=0 writeSafelyCalls=0\n"
+    },
+    {
+      "name": "callback-candidate-modified-write",
+      "variant": "callback-candidate",
+      "state": "modified",
+      "operation": "write",
+      "lookup": false,
+      "child_pid": 87682,
+      "timed_out": false,
+      "exit_code": 0,
+      "completed": true,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=true hasUnautosavedChanges=true\nCOORDINATOR_START\nCALLBACK_ENTER\nWRITE_SAFELY 1\nDATA_REQUESTED 1 Y2FjaGVkLWxhdGVzdAo=\nCOORDINATED_PREWRITE_BASE64 Y2FjaGVkLWxhdGVzdAo=\nCOORDINATED_WRITE\nCOORDINATOR_FINISHED nil\nFINAL updateContentCalls=0 dataCalls=1 writeSafelyCalls=1\n"
+    },
+    {
+      "name": "exact-original-modified-direct",
+      "variant": "exact-original",
+      "state": "modified",
+      "operation": "direct",
+      "lookup": false,
+      "child_pid": 87683,
+      "timed_out": false,
+      "exit_code": 0,
+      "completed": true,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=true hasUnautosavedChanges=true\nWRITE_SAFELY 1\nDATA_REQUESTED 1 Y2FjaGVkLWxhdGVzdAo=\nDIRECT_FINISHED updateContentCalls=0 dataCalls=1 writeSafelyCalls=1\n"
+    },
+    {
+      "name": "callback-candidate-modified-direct",
+      "variant": "callback-candidate",
+      "state": "modified",
+      "operation": "direct",
+      "lookup": false,
+      "child_pid": 87684,
+      "timed_out": false,
+      "exit_code": 0,
+      "completed": true,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=true hasUnautosavedChanges=true\nCALLBACK_ENTER\nWRITE_SAFELY 1\nDATA_REQUESTED 1 Y2FjaGVkLWxhdGVzdAo=\nDIRECT_FINISHED updateContentCalls=0 dataCalls=1 writeSafelyCalls=1\n"
+    },
+    {
+      "name": "exact-original-clean-write-lookup",
+      "variant": "exact-original",
+      "state": "clean",
+      "operation": "write",
+      "lookup": true,
+      "child_pid": 87685,
+      "timed_out": true,
+      "exit_code": null,
+      "completed": false,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=false hasUnautosavedChanges=false\nCOORDINATOR_START\nLOOKUP_START\n"
+    },
+    {
+      "name": "callback-candidate-clean-write-lookup",
+      "variant": "callback-candidate",
+      "state": "clean",
+      "operation": "write",
+      "lookup": true,
+      "child_pid": 87704,
+      "timed_out": false,
+      "exit_code": 0,
+      "completed": true,
+      "stdout": "SETUP isOutdated=false isTerminating=false hasBeenReverted=false isDocumentEdited=false hasUnautosavedChanges=false\nCOORDINATOR_START\nCALLBACK_ENTER\nCOORDINATED_PREWRITE_BASE64 b24tZGlzay1pbml0aWFsCg==\nCOORDINATED_WRITE\nCOORDINATOR_FINISHED nil\nLOOKUP_START\nLOOKUP_RETURNED\nFINAL updateContentCalls=0 dataCalls=0 writeSafelyCalls=0\n"
+    }
+  ]
+}

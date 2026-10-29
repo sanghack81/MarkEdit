@@ -1,0 +1,174 @@
+diff --git a/MarkEditCore/Sources/EditorIndexHtml.swift b/MarkEditCore/Sources/EditorIndexHtml.swift
+index 07267e0..141ccdc 100644
+--- a/MarkEditCore/Sources/EditorIndexHtml.swift
++++ b/MarkEditCore/Sources/EditorIndexHtml.swift
+@@ -28,6 +28,10 @@ public enum EditorIndexHtml {
+   }
+ 
+   public static func copyToSharedContainer() {
++    if UserDefaults.standard.bool(forKey: "markedit-probe-disable-quicklook-sharing") {
++      return
++    }
++
+     guard let targetURL = sharedURL, let data = bundledData else {
+       return
+     }
+diff --git a/MarkEditCore/Sources/Extensions/URL+Extension.swift b/MarkEditCore/Sources/Extensions/URL+Extension.swift
+index 3fc1d15..91903be 100644
+--- a/MarkEditCore/Sources/Extensions/URL+Extension.swift
++++ b/MarkEditCore/Sources/Extensions/URL+Extension.swift
+@@ -21,7 +21,7 @@ public extension URL {
+   }
+ 
+   static var sharedContainerURL: URL? {
+-    FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.app.cyan.markedit")
++    FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.app.cyan.markedit.probe.v136.arm.callback")
+   }
+ 
+   /// Files in this directory whose extension is in `types`, sorted by localized filename order.
+diff --git a/MarkEditCore/Sources/Extensions/UserDefaults+Extension.swift b/MarkEditCore/Sources/Extensions/UserDefaults+Extension.swift
+index 4fd08d0..913986d 100644
+--- a/MarkEditCore/Sources/Extensions/UserDefaults+Extension.swift
++++ b/MarkEditCore/Sources/Extensions/UserDefaults+Extension.swift
+@@ -36,7 +36,7 @@ public extension UserDefaults {
+ 
+ private extension UserDefaults {
+   static var appGroup: UserDefaults? {
+-    UserDefaults(suiteName: "group.app.cyan.markedit")
++    UserDefaults(suiteName: "group.app.cyan.markedit.probe.v136.arm.callback")
+   }
+ 
+   static let forcedColorSchemeKey = "forcedColorScheme"
+diff --git a/MarkEditMac/Info.entitlements b/MarkEditMac/Info.entitlements
+index d384349..6295380 100644
+--- a/MarkEditMac/Info.entitlements
++++ b/MarkEditMac/Info.entitlements
+@@ -16,5 +16,9 @@
+ 	<array>
+ 		<string>/</string>
+ 	</array>
++	<key>com.apple.security.application-groups</key>
++	<array>
++		<string>group.app.cyan.markedit.probe.v136.arm.callback</string>
++	</array>
+ </dict>
+ </plist>
+diff --git a/MarkEditMac/Sources/Editor/Models/EditorDocument.swift b/MarkEditMac/Sources/Editor/Models/EditorDocument.swift
+index eafccc5..33c3db2 100644
+--- a/MarkEditMac/Sources/Editor/Models/EditorDocument.swift
++++ b/MarkEditMac/Sources/Editor/Models/EditorDocument.swift
+@@ -377,22 +377,31 @@ extension EditorDocument {
+     saveContent(sender: sender, userInitiated: true)
+   }
+ 
+-  override func autosave(withImplicitCancellability implicitlyCancellable: Bool) async throws {
+-    if isOutdated {
+-      await updateContent()
+-    }
++  override func autosave(
++    withImplicitCancellability implicitlyCancellable: Bool,
++    completionHandler: @escaping (Error?) -> Void
++  ) {
++    let saveAction = {
++      do {
++        if !self.hasBeenReverted && self.isTerminating && self.hasUnautosavedChanges,
++           let fileURL = self.fileURL, let fileType = self.fileType {
++          try self.writeSafely(to: fileURL, ofType: fileType, for: .autosaveAsOperation)
++          self.fileModificationDate = .now
++          completionHandler(nil)
++          return
++        }
+ 
+-    // The default autosave doesn't work when the app is about to terminate,
+-    // it is because we have to do it in an asynchronous way.
+-    //
+-    // To work around this, check a flag to save the document manually.
+-    if !hasBeenReverted && isTerminating && hasUnautosavedChanges, let fileURL, let fileType {
+-      try writeSafely(to: fileURL, ofType: fileType, for: .autosaveAsOperation)
+-      fileModificationDate = .now // Prevent immediate presentedItemDidChange calls
+-      return
++        super.autosave(withImplicitCancellability: implicitlyCancellable, completionHandler: completionHandler)
++      } catch {
++        completionHandler(error)
++      }
+     }
+ 
+-    try await super.autosave(withImplicitCancellability: implicitlyCancellable)
++    if isOutdated {
++      updateContent(saveAction: saveAction)
++    } else {
++      saveAction()
++    }
+   }
+ 
+   override func data(ofType typeName: String) throws -> Data {
+diff --git a/MarkEditMac/Sources/Main/Application/AppDelegate.swift b/MarkEditMac/Sources/Main/Application/AppDelegate.swift
+index b1387ad..1b4bdeb 100644
+--- a/MarkEditMac/Sources/Main/Application/AppDelegate.swift
++++ b/MarkEditMac/Sources/Main/Application/AppDelegate.swift
+@@ -59,6 +59,38 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
+   @IBOutlet weak var postponeUpdateItem: NSMenuItem?
+   @IBOutlet weak var ignoreUpdateItem: NSMenuItem?
+ 
++  private var probeBaselineWritten = false
++
++  @objc private func writeProbeWindowSnapshot(_ timer: Timer) {
++    guard let path = UserDefaults.standard.string(forKey: "markedit-probe-documents-log") else {
++      return
++    }
++
++    let titles = NSApp.windows.filter { $0.isVisible }.map { $0.title }
++    let snapshot: [String: Any] = ["window_titles": titles, "heartbeat": Date().timeIntervalSince1970]
++    if let data = try? JSONSerialization.data(withJSONObject: snapshot, options: [.prettyPrinted, .sortedKeys]) {
++      try? data.write(to: URL(fileURLWithPath: path + ".windows.json"), options: .atomic)
++    }
++
++    if !probeBaselineWritten && titles.contains("existing.md") {
++      probeBaselineWritten = true
++      let records: [[String: Any]] = NSDocumentController.shared.documents.map { document in
++        [
++          "file_url": document.fileURL?.path ?? "",
++          "window_titles": document.windowControllers.compactMap { $0.window?.title },
++          "is_document_edited": document.isDocumentEdited,
++          "has_unautosaved_changes": document.hasUnautosavedChanges,
++          "is_outdated": (document as? EditorDocument)?.isOutdated ?? false,
++          "is_content_ready": (document as? EditorDocument)?.isContentReady ?? false,
++          "string_value": (document as? EditorDocument)?.stringValue ?? "",
++        ]
++      }
++      if let data = try? JSONSerialization.data(withJSONObject: records, options: [.prettyPrinted, .sortedKeys]) {
++        try? data.write(to: URL(fileURLWithPath: path), options: .atomic)
++      }
++    }
++  }
++
+   private var appearanceObservation: NSKeyValueObservation?
+   private var settingsWindowController: NSWindowController?
+ 
+@@ -68,6 +100,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
+   }
+ 
+   func applicationDidFinishLaunching(_ notification: Notification) {
++    if UserDefaults.standard.string(forKey: "markedit-probe-documents-log") != nil {
++      Timer.scheduledTimer(
++        timeInterval: 0.5, target: self, selector: #selector(writeProbeWindowSnapshot(_:)), userInfo: nil, repeats: true
++      )
++    }
++
+     AppDesign.migrateMainMenuIcons(delegate: self)
+     appearanceObservation = NSApp.observe(\.effectiveAppearance) { _, _ in
+       Task { @MainActor in
+diff --git a/QuickLookMac/Info.entitlements b/QuickLookMac/Info.entitlements
+index 0470bb1..bf7f516 100644
+--- a/QuickLookMac/Info.entitlements
++++ b/QuickLookMac/Info.entitlements
+@@ -12,5 +12,9 @@
+ 	<array>
+ 		<string>/</string>
+ 	</array>
++	<key>com.apple.security.application-groups</key>
++	<array>
++		<string>group.app.cyan.markedit.probe.v136.arm.callback</string>
++	</array>
+ </dict>
+ </plist>

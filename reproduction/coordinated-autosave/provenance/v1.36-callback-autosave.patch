@@ -1,0 +1,47 @@
+--- a/MarkEditMac/Sources/Editor/Models/EditorDocument.swift
++++ b/MarkEditMac/Sources/Editor/Models/EditorDocument.swift
+@@ -377,22 +377,31 @@
+     saveContent(sender: sender, userInitiated: true)
+   }
+ 
+-  override func autosave(withImplicitCancellability implicitlyCancellable: Bool) async throws {
+-    if isOutdated {
+-      await updateContent()
++  override func autosave(
++    withImplicitCancellability implicitlyCancellable: Bool,
++    completionHandler: @escaping (Error?) -> Void
++  ) {
++    let saveAction = {
++      do {
++        if !self.hasBeenReverted && self.isTerminating && self.hasUnautosavedChanges,
++           let fileURL = self.fileURL, let fileType = self.fileType {
++          try self.writeSafely(to: fileURL, ofType: fileType, for: .autosaveAsOperation)
++          self.fileModificationDate = .now
++          completionHandler(nil)
++          return
++        }
++
++        super.autosave(withImplicitCancellability: implicitlyCancellable, completionHandler: completionHandler)
++      } catch {
++        completionHandler(error)
++      }
+     }
+ 
+-    // The default autosave doesn't work when the app is about to terminate,
+-    // it is because we have to do it in an asynchronous way.
+-    //
+-    // To work around this, check a flag to save the document manually.
+-    if !hasBeenReverted && isTerminating && hasUnautosavedChanges, let fileURL, let fileType {
+-      try writeSafely(to: fileURL, ofType: fileType, for: .autosaveAsOperation)
+-      fileModificationDate = .now // Prevent immediate presentedItemDidChange calls
+-      return
++    if isOutdated {
++      updateContent(saveAction: saveAction)
++    } else {
++      saveAction()
+     }
+-
+-    try await super.autosave(withImplicitCancellability: implicitlyCancellable)
+   }
+ 
+   override func data(ofType typeName: String) throws -> Data {

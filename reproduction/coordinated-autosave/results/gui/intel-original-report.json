@@ -1,0 +1,27 @@
+{
+  "app": "/tmp/REDACTED/markedit-real-app-proof-z0p28shh/runtime/MarkEditProbe.app",
+  "bundle_id": "app.cyan.markedit.probe.v136",
+  "started_at": "2026-10-28T22:05:40.948501+09:00",
+  "launch_command": [
+    "/usr/bin/open",
+    "-n",
+    "-a",
+    "/tmp/REDACTED/markedit-real-app-proof-z0p28shh/runtime/MarkEditProbe.app",
+    "/tmp/REDACTED/markedit-built-app-test-bbel7v8m/existing.md",
+    "--args",
+    "-updater.completely-disabled",
+    "YES",
+    "-ApplePersistenceIgnoreState",
+    "YES"
+  ],
+  "pid": 89330,
+  "coordinator_pid": 89352,
+  "coordinator_exit_before_next_open": null,
+  "next_window_present": false,
+  "coordinator_still_pending": true,
+  "coordinator_exit": null,
+  "external_write_reached_disk": false,
+  "serialization_wait_in_sample": true,
+  "finished_at": "2026-10-28T22:05:53.737763+09:00",
+  "probe_stopped": true
+}

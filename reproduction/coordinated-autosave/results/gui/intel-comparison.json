@@ -1,0 +1,24 @@
+[
+  {
+    "case": "intel-original",
+    "total_main_samples": 4166,
+    "main_serialization_wait_samples": 4166,
+    "main_has_documentForURL": false,
+    "main_has_autosave_check": true,
+    "coordinator_completed": false,
+    "next_window_present": false,
+    "external_write_reached_disk": false,
+    "probe_stopped": true
+  },
+  {
+    "case": "intel-callback",
+    "total_main_samples": 4100,
+    "main_serialization_wait_samples": 0,
+    "main_has_documentForURL": false,
+    "main_has_autosave_check": false,
+    "coordinator_completed": true,
+    "next_window_present": true,
+    "external_write_reached_disk": true,
+    "probe_stopped": true
+  }
+]
